@@ -1,0 +1,30 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { colors } from "../styleVariables";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const {
+    sr: { [600]: borderColor, [300]: textColor },
+} = colors;
+---
+
+<nav
+    class="flex gap-5 mx-auto p-2 sm:p-3 sm:pr-10 w-fit font-semibold font-k2d *:border-b-2 *:transition sm:text-lg md:text-xl lg:text-2xl"
+>
+    <a href="#aboutMe" id="#aboutMe" class="navLink sectionSelected"
+        >{t("nav.aboutMe")}</a
+    >
+    <a href="#skills" id="#skills" class="navLink">{t("nav.skills")}</a>
+    <!-- <a href="#projects" id="#projects" class="navLink">{t("nav.projects")}</a> -->
+</nav>
+
+<style define:vars={{ borderColor, textColor }}>
+    .navLink {
+        border-color: transparent;
+    }
+    .sectionSelected {
+        color: var(--textColor);
+        border-color: var(--borderColor);
+    }
+</style>

@@ -1,8 +1,9 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import { colors } from "../styleVariables";
-import AboutMe from "../components/aboutMe/AboutMe.astro";
+import Layout from "../../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import { colors } from "../../styleVariables";
+import AboutMe from "../../components/aboutMe/AboutMe.astro";
+import Skills from "../../components/skills/Skills.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -11,18 +12,23 @@ const thumbColor = colors.sr[500];
 
 <Layout title="Sebastian Robayo's Portfolio">
 	<main
-		class="flex-grow overflow-x-scroll snap-x snap-mandatory"
+		class="flex-grow overflow-x-scroll snap-x snap-mandatory scroll-smooth"
 		id="mainContent"
 	>
 		<div
-			class="h-full grid grid-cols-3 w-max *:w-screen *:snap-start *:snap-always"
+			class="h-full grid grid-cols-3 w-max *:w-screen *:snap-start *:snap-always *:overflow-y-scroll"
 			id="content"
 		>
-			<section class="bg-blue-500" id="aboutMe">
+			<section id="aboutMe" class="">
 				<AboutMe />
 			</section>
-			<section class="bg-yellow-500" id="skills"></section>
-			<section class="bg-green-500" id="projects"></section>
+			<section id="skills" class="">
+				<Skills />
+			</section>
+
+			<section class="" id="projects">
+
+			</section>
 		</div>
 	</main>
 </Layout>

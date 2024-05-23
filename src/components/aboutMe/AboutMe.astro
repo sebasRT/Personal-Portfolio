@@ -1,0 +1,63 @@
+---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import { colors } from "../../styleVariables";
+import CoreValues from "./CoreValues.astro";
+import Social from "./Social.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const {
+    sr: { [600]: borderColor, [300]: textColor, [500]: bg },
+} = colors;
+---
+
+<article
+    class="relative flex flex-col gap-5 h-full justify-between overflow-y-scroll  mx-auto"
+>
+    <section class="max-w-screen-lg mx-auto">
+        <h2 class="text-center font-bold font-k2d my-6">
+            <p class="text-lg sm:text-2xl md:text-3xl lg:text-4xl text-sr-500">
+                PROFESSIONAL
+            </p>
+            <p class="text-xl sm:text-3xl md:text-4xl lg:text-5xl">
+                FULL-STACK DEVELOPER
+            </p>
+        </h2>
+        <div class="relative mt-10 sm:text-2xl md:text-3xl lg:text-3xl">
+                <figure
+                    class="bg-sr-500/50
+                w-28 h-56 rounded-[0_7rem_7rem_0]"
+                    id="image"
+                >
+                </figure>
+            <div class="px-5 ">
+                    {
+                        lang === "es" ? <span class="mb-5">Hola, soy <b>Sebastian</b>, dedicado a mejorar la presencia en línea de tu pequeña o mediana empresa! </span> :
+                         <span class="mb-5">Hi, I'm <b>Sebastian</b>, dedicated to enhancing your small to medium-sized business's online presence.</span> 
+                    }
+               
+
+                <ul class="my-5 list-disc list-inside *:my-3" >
+                    <li>{t("aboutMe.1")}</li>
+                    <li>{t("aboutMe.2")}</li>
+                </ul>
+
+                <span class="text-sr-400 font-semibold text-center text-[1.1em]">{t("aboutMe.cta")}</span>
+            </div>
+        </div>
+    </section>
+    <CoreValues />
+    <Social />
+</article>
+
+<style define:vars={{bg}}>
+    #image {
+        float: left;
+        box-shadow:  0 0 10px 10px rgb(21 137 226 / 0.5);
+        shape-outside: border-box;
+        shape-margin: 3rem;
+        margin: 5rem 0;
+        margin-right:50px;
+    }
+</style>

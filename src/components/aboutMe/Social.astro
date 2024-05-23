@@ -1,0 +1,21 @@
+---
+import { Icon } from "astro-icon/components";
+import github from "../../icons/social/github.svg"
+import upwork from "../../icons/social/upwork.svg"
+import linkedin from "../../icons/social/linkedin.svg"
+---
+
+<section class="flex flex-col gap-8 py-8 bg-sr-900/80 justify-around items-center">
+    <div class="relative flex text-4xl sm:text-5xl md:text-6xl lg:text-6xl gap-5">
+        <a href="https://github.com/sebasRT"><img src={github.src} alt="upwork link"/></a>
+        <a href="https://www.upwork.com/freelancers/~015b1a3b65332bb4e4?viewMode=1"><img src={upwork.src} alt="upwork link"/></a>
+        <a href="https://www.linkedin.com/in/sebastian-robayo-074b30249/"><img src={linkedin.src} alt="linkedin link"/></a>
+    </div>
+    <div>
+        <div class="flex gap-5 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold">
+            <a href="tel:+1-973-449-2442" class="flex flex-col items-center"><Icon name="social/phone" class="mx-4 "/> <p class="hidden">+1 973 449 2442</p></a>
+            <div class="border-l-2 border-white"/>
+            <a href="mailto:rtsebas11@gmail.com" class="flex flex-col items-center"><Icon name="social/email" class="mx-4 "/><p class="hidden">rtsebas11@gmail.com</p> </a>
+        </div>
+    </div>
+</section>
