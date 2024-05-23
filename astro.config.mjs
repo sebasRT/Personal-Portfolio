@@ -4,14 +4,16 @@ import preact from "@astrojs/preact";
 
 import icon from "astro-icon";
 
-// https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), preact(), icon()],
   i18n: {
-    defaultLocale: 'es',
+    defaultLocale: 'en',
     locales: ["en", "es"],
     routing: {
-      prefixDefaultLocale: true
+      prefixDefaultLocale: false
     }
+  },
+  redirects: {
+    '/en': '/'
   }
 });

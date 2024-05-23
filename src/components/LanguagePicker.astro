@@ -13,14 +13,16 @@ const langLabel = lang === "es" ? "ESP" : "EN";
     id="languageOptions"
   >
     {
-      Object.entries(languages).map(([lang, label]) => {
+      Object.entries(languages).map(([lang]) => {
         const languageLabel = lang === "es" ? "Español" : "English";
+        const path =lang === "es" ?  "/es" : "/"
+
         return (
           <li
             tabindex={0}
             class="first:border-b hover:bg-black/10 px-2 py-1 font-semibold"
           >
-            <a href={`/${lang}/`}>{languageLabel}</a>
+            <a href={path}>{languageLabel}</a>
           </li>
         );
       })
@@ -32,6 +34,6 @@ const langLabel = lang === "es" ? "ESP" : "EN";
   >
     <span>{langLabel}</span>
     <Icon name="row" class="rotate-90 group-focus:text-sr-500" />
-    {lang == "es" ? <Icon name="flags/colombia" /> : <Icon name="flags/us" />}
+    {lang == "es" ? <Icon name="flags/colombia" /> : <Icon name="flags/us" class="rounded-full"/>}
   </div>
 </div>

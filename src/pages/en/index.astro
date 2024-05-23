@@ -1,13 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
-import { colors } from "../../styleVariables";
 import AboutMe from "../../components/aboutMe/AboutMe.astro";
 import Skills from "../../components/skills/Skills.astro";
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
-const thumbColor = colors.sr[500];
 ---
 
 <Layout title="Sebastian Robayo's Portfolio">
