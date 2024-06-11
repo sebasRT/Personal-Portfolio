@@ -3,6 +3,8 @@ import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 import { colors } from "../../styleVariables";
 import CoreValues from "./CoreValues.astro";
 import Social from "./Social.astro";
+import personalImage from "./assets/SR.png";
+import { Image } from "astro:assets";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -13,7 +15,7 @@ const {
 ---
 
 <article
-    class="relative flex flex-col gap-5 h-full justify-between overflow-y-scroll  mx-auto"
+    class="relative flex flex-col gap-5 h-full justify-between overflow-y-scroll mx-auto text-sm"
 >
     <section class="max-w-screen-lg mx-auto">
         <h2 class="text-center font-bold font-k2d my-6">
@@ -25,25 +27,42 @@ const {
             </p>
         </h2>
         <div class="relative mt-10 sm:text-2xl md:text-3xl lg:text-3xl">
-                <figure
-                    class="bg-sr-500/50
-                w-28 h-56 rounded-[0_7rem_7rem_0]"
-                    id="image"
-                >
-                </figure>
-            <div class="px-5 ">
-                    {
-                        lang === "es" ? <span class="mb-5">Hola, soy <b>Sebastian</b>, dedicado a mejorar la presencia en línea de tu pequeña o mediana empresa! </span> :
-                         <span class="mb-5">Hi, I'm <b>Sebastian</b>, dedicated to enhancing your small to medium-sized business's online presence.</span> 
-                    }
-               
+            <figure
+                class="bg-sr-500/50
+                    flex
+                w-28 h-56 rounded-[0_7rem_7rem_0] md:rounded-full md:w-56"
+                id="image"
+            >
+                <Image
+                    src={personalImage}
+                    alt="Personal Sebastian's photo"
+                    class="self-center scale-150 md:scale-100"
+                />
+            </figure>
+            <div class="px-5">
+                {
+                    lang === "es" ? (
+                        <span class="mb-5">
+                            Hola, soy <b>Sebastian</b>, dedicado a mejorar la
+                            presencia en línea de tu pequeña o mediana empresa!{" "}
+                        </span>
+                    ) : (
+                        <span class="mb-5">
+                            Hi, I'm <b>Sebastian</b>, dedicated to enhancing
+                            your small to medium-sized business's online
+                            presence.
+                        </span>
+                    )
+                }
 
-                <ul class="my-5 list-disc list-inside *:my-3" >
+                <ul class="my-5 list-disc list-inside *:my-3">
                     <li>{t("aboutMe.1")}</li>
                     <li>{t("aboutMe.2")}</li>
                 </ul>
 
-                <span class="text-sr-400 font-semibold text-center text-[1.1em]">{t("aboutMe.cta")}</span>
+                <span class="text-sr-400 font-semibold text-center text-[1.1em]"
+                    >{t("aboutMe.cta")}</span
+                >
             </div>
         </div>
     </section>
@@ -51,13 +70,13 @@ const {
     <Social />
 </article>
 
-<style define:vars={{bg}}>
+<style define:vars={{ bg }}>
     #image {
         float: left;
-        box-shadow:  0 0 10px 10px rgb(21 137 226 / 0.5);
+        box-shadow: 0 0 10px 10px rgb(21 137 226 / 0.5);
         shape-outside: border-box;
         shape-margin: 3rem;
         margin: 5rem 0;
-        margin-right:50px;
+        margin-right: 50px;
     }
 </style>

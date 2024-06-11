@@ -2,7 +2,8 @@
 import { Icon } from "astro-icon/components";
 import { colors } from "../../styleVariables";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
-
+import { Image } from "astro:assets";
+import nodeJsSVG from "../../icons/skills/nodejs.svg"
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const {
@@ -11,13 +12,13 @@ const {
 ---
 
 <article
-    class="flex flex-col gap-5 h-full justify-between items-center overflow-y-scroll overflow-x-hidden mx-auto"
+    class="flex flex-col gap-5 h-full justify-between items-center overflow-y-scroll overflow-x-hidden mx-auto text-16px"
 >
     <section
         class="relative w-full max-w-screen-md h-full min-h-[80vh] *:absolute *:rounded-full *:grid *:place-items-center"
     >
         <div
-            class=" top-[10%] right-0 w-52 h-52 *:absolute *:text-[2em] skillSet  *:transition "
+            class=" top-[10%] right-0 w-44 h-44 sm:w-52 sm:h-52 *:absolute *:text-[2em] skillSet  *:transition "
         >
             <Icon
                 name="skills/js"
@@ -53,14 +54,14 @@ const {
         <div class="top-[19%] w-32 h-32 skillSet">
             <Icon name="skills/reactjs" class="text-[5em] hover:scale-110 transition" />
         </div>
-        <div class="top-[45%] left-[40%] w-[6em] h-[6em] skillSet">
+        <div class="top-[45%] left-[40%] w-[6em] h-[6em]  skillSet">
             <Icon
                 name="skills/nextjs"
-                class="text-black text-[6em] bg-white rounded-full border hover:scale-110 transition"
+                class="text-black text-[6em]  bg-white rounded-full border hover:scale-110 transition"
             />
         </div>
         <div class="top-[60%] w-36 h-36 skillSet">
-            <Icon name="skills/nodejs" class="hover:scale-110 transition text-[6em]"/>
+            <Image src={nodeJsSVG} class="hover:scale-110 transition text-[6em]" alt="node Js svg"/>
         </div>
         <div class="bottom-[5%] right-[10%] w-36 h-36 skillSet">
             <Icon name="skills/mongodb" class="text-[6em] hover:scale-110 transition" />
