@@ -9,7 +9,7 @@ export const languages = {
   
   export const ui = {
     en: {
-      'aboutMe.1': 'With expertise in crafting everything from captivating landing pages to robust e-commerce solutions, my focus is on delivering value to your clients.',
+      'aboutMe.1': 'With expertise in crafting everything from captivating landing pages to e-commerce solutions, my focus is on delivering value to your clients.',
       'aboutMe.2': 'I excel at understanding your needs, identifying pain points, and seizing business opportunities to drive growth.',
       'aboutMe.cta': "Let's collaborate to transform your vision into reality !",
       'coreValues.openness': "Openness",
@@ -28,7 +28,7 @@ export const languages = {
       'nav.projects': 'Projects',
     },
     es: {
-      'aboutMe.1': 'Con experiencia en crear desde atractivas páginas de inicio hasta sólidas soluciones de comercio electrónico, mi enfoque está en ofrecer valor a tus clientes.',
+      'aboutMe.1': 'Con experiencia en crear desde atractivas páginas de inicio hasta soluciones de comercio electrónico, mi enfoque está en ofrecer valor a tus clientes.',
       'aboutMe.2': 'Destaco en entender tus necesidades, identificar puntos de dolor y aprovechar oportunidades de negocio para impulsar el crecimiento.',
       'aboutMe.cta': '¡Colaboremos para transformar tu visión en realidad!',
       'coreValues.openness': "Mente abierta",
